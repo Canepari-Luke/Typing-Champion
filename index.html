@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Typing Champion</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background-color: #f4f4f4;
+      padding: 20px;
+    }
+    #word-display {
+      font-size: 2rem;
+      margin: 20px;
+    }
+    #result {
+      margin-top: 20px;
+      font-size: 1.5rem;
+    }
+    #input {
+      padding: 10px;
+      font-size: 1rem;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Typing Champion</h1>
+  <div id="word-display">Press Start to Begin</div>
+  <input type="text" id="input" placeholder="Type here..." disabled>
+  <button id="start-button">Start</button>
+  <div id="result"></div>
+
+  <!-- Link to the external JavaScript file -->
+  <script src="typing_champion.js"></script>
+</body>
+</html>
