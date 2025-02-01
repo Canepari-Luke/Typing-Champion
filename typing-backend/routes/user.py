@@ -10,12 +10,17 @@ HOST = os.getenv("HOST")
 USER = os.getenv("USER")
 PASSWORD = os.getenv("PASSWORD")
 DATABASE = os.getenv("DATABASE")
+print(HOST, USER, PASSWORD, DATABASE)
 
 
 @Router.get("/users/")
 def GetAllUsers():
     try:
-        ConnectionString = ConnectDatabase.Connection(HOST, USER, PASSWORD, DATABASE)
+        ConnectionString = ConnectDatabase(HOST, USER, PASSWORD, DATABASE).Connection()
+        Cursor = ConnectionString.cursor(dictionary=True)
+        Cursor.execute("SELECT * FROM User")
+        Users = Cursor.fetchall()
+        return Users
     except:
         return {"error":"Cannot Connect to Database"}
 
