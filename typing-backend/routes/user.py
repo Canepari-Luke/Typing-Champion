@@ -11,6 +11,15 @@ USER = os.getenv("USER")
 PASSWORD = os.getenv("PASSWORD")
 DATABASE = os.getenv("DATABASE")
 
+
+@Router.get("/users/")
+def GetAllUsers():
+    try:
+        ConnectionString = ConnectDatabase.Connection(HOST, USER, PASSWORD, DATABASE)
+    except:
+        return {"error":"Cannot Connect to Database"}
+
+
 @Router.post("/create/")
 def CreateUser():
     ConnectionString = ConnectDatabase(HOST, USER, PASSWORD, DATABASE)
