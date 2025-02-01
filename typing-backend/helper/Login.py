@@ -1,8 +1,5 @@
 import hashlib
-import json
-import os
 import getpass
-import pwinput
 #Michael Lingard portion
 #All comment out portions were to test if it all works.
 
