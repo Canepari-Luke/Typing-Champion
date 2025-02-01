@@ -23,11 +23,3 @@ def GetAllUsers():
         return Users
     except:
         return {"error":"Cannot Connect to Database"}
-
-
-@Router.post("/create/")
-def CreateUser():
-    ConnectionString = ConnectDatabase(HOST, USER, PASSWORD, DATABASE)
-    if not ConnectionString:
-        return {"error":"Cannot Connect to Database"}
-    Cursor = ConnectionString.cursor()
