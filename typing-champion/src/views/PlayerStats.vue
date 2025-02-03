@@ -1,1 +1,2 @@
-<!--We can link the player stats page here-->
+<script setup></script>
+<template></template>

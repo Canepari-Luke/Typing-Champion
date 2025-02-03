@@ -1,1 +1,2 @@
-<!--We can link everything for the login/signup page here-->
+<script setup></script>
+<template></template>
