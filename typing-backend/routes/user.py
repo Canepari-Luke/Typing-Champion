@@ -1,25 +1,43 @@
 from fastapi import APIRouter
-from dotenv import load_dotenv
-from models.database import ConnectDatabase
-import os
-
+from helper.query import QueryResult
+from helper.queries import AllUsers, SingleUser, GameDetailSingle, AllScores
+from helper.connection import MakeConnection
 Router = APIRouter()
-load_dotenv()
-
-HOST = os.getenv("HOST")
-USER = os.getenv("USER")
-PASSWORD = os.getenv("PASSWORD")
-DATABASE = os.getenv("DATABASE")
-print(HOST, USER, PASSWORD, DATABASE)
 
 
 @Router.get("/users/")
-def GetAllUsers():
+async def GetAllUsers():
     try:
-        ConnectionString = ConnectDatabase(HOST, USER, PASSWORD, DATABASE).Connection()
-        Cursor = ConnectionString.cursor(dictionary=True)
-        Cursor.execute("SELECT * FROM User")
-        Users = Cursor.fetchall()
-        return Users
+        ConnectionString = MakeConnection()
+        try:
+            Users = QueryResult(ConnectionString, AllUsers, "multiple", None)
+            return Users
+        except:
+            return {"error":"Cannot Find results"}
     except:
         return {"error":"Cannot Connect to Database"}
+
+@Router.get("/user/{username}")
+async def GetSingleUser(username: str):
+    try:
+        ConnectionString = MakeConnection()
+        try:
+            User = QueryResult(ConnectionString, SingleUser, 'single', (username,))
+            UserDetails = QueryResult(ConnectionString, GameDetailSingle, 'multiple', (username,))
+            return User, UserDetails
+        except:
+            return {"Error":f"Cannot Find {username}"}
+    except:
+        return {"Error":"Cannot connect to Database"}
+
+@Router.get("/scores")
+async def GetAllScores():
+    try:
+        ConnectionString = MakeConnection()
+        try:
+            Scores = QueryResult(ConnectionString, AllScores, 'multiple', None)
+            return Scores
+        except:
+            return {"Error":"Cannot find scores"}
+    except:
+        return {"Error":"Cannot connect to Database"}
