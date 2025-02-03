@@ -21,7 +21,7 @@ def QueryResult(ConnectionString:str, Query:str, Flag:str, Params: tuple[str] | 
                 return Multiple
             case 'create':
                 Cursor.execute(Query, Params)
-                Cursor.commit()
+                ConnectionString.commit()
                 return True
     except:
         return False
