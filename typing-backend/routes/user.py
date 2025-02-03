@@ -1,5 +1,4 @@
 from fastapi import APIRouter
-from models.database import ConnectDatabase
 from helper.query import QueryResult
 from helper.queries import AllUsers, SingleUser, GameDetailSingle, AllScores
 from helper.connection import MakeConnection

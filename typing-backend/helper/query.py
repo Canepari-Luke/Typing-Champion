@@ -19,5 +19,8 @@ def QueryResult(ConnectionString:str, Query:str, Flag:str, Params: tuple[str] | 
                     Cursor.execute(Query, Params)
                 Multiple = Cursor.fetchall()
                 return Multiple
+            case 'create':
+                Cursor.execute(Query, Params)
+                Cursor.commit()
     except:
         return False
