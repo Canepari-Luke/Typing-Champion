@@ -1,1 +1,5 @@
-<!--We can link everything for the home page here-->
+<script setup>
+</script>
+
+<template>
+</template>

@@ -1,1 +1,2 @@
-<!--We can link the leaderboard page here-->
+<script setup></script>
+<template></template>
