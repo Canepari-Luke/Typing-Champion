@@ -1,1 +1,8 @@
-<!--We can link everything for the home page here-->
+<script setup>
+import Header from '@/components/Header.vue';
+
+</script>
+
+<template>
+    <Header />
+</template>
