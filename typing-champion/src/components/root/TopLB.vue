@@ -8,7 +8,8 @@ const topUsers = ref([]);
 // Function to fetch top 10 users from the backend
 const fetchLeaderboard = async () => {
     try {
-        const response = await axios.get("http://localhost:8000/api/users/");
+        const response = await axios.get("http://localhost:8000/api/scores/");
+        console.log(response);
         
         // Assuming the backend returns a full list of users, we slice the top 10
         topUsers.value = response.data.slice(0, 10); 
