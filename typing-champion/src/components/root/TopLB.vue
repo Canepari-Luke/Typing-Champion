@@ -1,5 +1,6 @@
 <script setup>
 import { ref, onMounted } from 'vue';
+import axios from 'axios';
 
 // Reactive variable to store leaderboard data
 const topUsers = ref([]);
@@ -7,13 +8,10 @@ const topUsers = ref([]);
 // Function to fetch top 10 users from the backend
 const fetchLeaderboard = async () => {
     try {
-        const response = await fetch("http://localhost:8000/api/users/");
-        if (!response.ok) throw new Error("Failed to fetch leaderboard data");
-
-        const data = await response.json();
+        const response = await axios.get("http://localhost:8000/api/users/");
         
         // Assuming the backend returns a full list of users, we slice the top 10
-        topUsers.value = data.slice(0, 10); 
+        topUsers.value = response.data.slice(0, 10); 
     } catch (error) {
         console.error("Error fetching leaderboard:", error);
     }
