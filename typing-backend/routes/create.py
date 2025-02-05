@@ -5,6 +5,7 @@ from helper.connection import MakeConnection
 from helper.query import QueryResult
 from helper.queries import AddUser
 from helper.Login import hash_password
+#Michael Lingard 2025
 #Create a new APIRouter instance
 Router = APIRouter()
 
