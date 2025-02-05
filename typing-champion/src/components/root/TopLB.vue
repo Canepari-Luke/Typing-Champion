@@ -7,7 +7,7 @@ const topUsers = ref([]);
 // Function to fetch top 10 users from the backend
 const fetchLeaderboard = async () => {
     try {
-        const response = await fetch("http://localhost:8000/api/users/");
+        const response = await fetch("http://localhost:8000/api/scores/");
         if (!response.ok) throw new Error("Failed to fetch leaderboard data");
 
         const data = await response.json();
