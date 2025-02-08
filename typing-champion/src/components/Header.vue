@@ -2,6 +2,7 @@
 </script>
 
 <template>
+<<<<<<< HEAD
     <header>
         <h1>Home</h1>
         <nav>
@@ -11,4 +12,5 @@
         </nav>  
     </header>
     
+=======
 </template>
