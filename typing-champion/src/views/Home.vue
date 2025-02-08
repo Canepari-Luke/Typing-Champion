@@ -4,7 +4,6 @@ import TopLB from '@/components/root/TopLB.vue';
 </script>
 
 <template>
-  <Header />
 
   <div class="home">
     <h1>Welcome, Typing Champion!</h1>
