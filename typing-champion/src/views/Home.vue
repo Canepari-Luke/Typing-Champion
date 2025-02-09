@@ -1,5 +1,6 @@
 <script setup>
 import Header from '@/components/Header.vue';
+import Play from '@/components/Play.vue';
 import TopLB from '@/components/root/TopLB.vue';
 </script>
 
@@ -11,6 +12,7 @@ import TopLB from '@/components/root/TopLB.vue';
     <p>Click play to start or check the leaderboard.</p>
 
     <!-- Include the Top 10 Leaderboard component here -->
+    <Play />
     <TopLB />
   </div>
 </template>
