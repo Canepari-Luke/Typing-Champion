@@ -16,6 +16,6 @@ const level = parseInt(route.query.level || 1); // Get level from query, default
 
 <style scoped>
 .game {
-  text-align: center; // Just for basic styling
+  text-align: center;
 }
 </style>
