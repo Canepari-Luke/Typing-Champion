@@ -1,23 +1,15 @@
-// Play.vue
 <script setup>
 import { ref } from 'vue';
+import { useRouter } from 'vue-router'; // Import useRouter
 
-const selectedLevel = ref(1); // Default level
-const levels = ref([1, 2, 3, 4, 5]); // Example levels - fetch from backend if needed
+const router = useRouter(); // Get the router instance
+
+const selectedLevel = ref(1);
+const levels = ref([1, 2, 3, 4, 5]);
 
 const startGame = () => {
-  // Logic to open the game in the browser
-  // This could be a new tab, iframe, or in-place replacement
-  const gameUrl = `/game?level=${selectedLevel.value}`; // Construct game URL
-  window.open(gameUrl, '_blank'); // Open in new tab (adjust as needed)
-
-  // OR for in-place replacement (within the same tab):
-  // window.location.href = gameUrl;
-
-  // OR for embedding in an iframe:
-  // const iframe = document.createElement('iframe');
-  // iframe.src = gameUrl;
-  // document.getElementById('game-container').appendChild(iframe); // Assuming you have a <div id="game-container"></div> in your template
+  const gameUrl = `/game?level=${selectedLevel.value}`; // Construct game URL (still needed)
+  router.push(gameUrl); // Use router.push for navigation
 };
 </script>
 
