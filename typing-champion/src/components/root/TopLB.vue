@@ -5,14 +5,47 @@ import axios from 'axios';
 // Reactive variable to store leaderboard data
 const topUsers = ref([]);
 
+// Helper function to process the backend data
+const processData = (data) => {
+    // Create an object to store the best score for each player
+    const players = {};
+
+    // Loop through the data and select the best score for each player
+    data.forEach(entry => {
+        const { Name, WordPerMinute, Accuracy, Level } = entry;
+
+        // Use a unique key by combining Name and Level
+        const playerKey = `${Name}-${Level}`;  // You can adjust this to use other unique fields if needed
+
+        if (!players[playerKey] || players[playerKey].WordPerMinute < WordPerMinute) {
+            players[playerKey] = { Name, WordPerMinute, Accuracy, Level };
+        }
+    });
+
+    // Convert the players object to an array and sort by WordPerMinute (WPM)
+    const topPlayers = Object.values(players).sort((a, b) => b.WordPerMinute - a.WordPerMinute);
+
+    console.log("Processed Players:", topPlayers);  // Debugging line to check data
+
+    return topPlayers;
+};
+
 // Function to fetch top 10 users from the backend
 const fetchLeaderboard = async () => {
     try {
         const response = await axios.get("http://localhost:8000/api/scores/");
-        console.log(response);
         
-        // Assuming the backend returns a full list of users, we slice the top 10
-        topUsers.value = response.data.slice(0, 10); 
+        // Log raw data to see what we are getting from the backend
+        console.log("Raw Data:", response.data);
+
+        // Process the fetched data to get the top players
+        const processedData = processData(response.data);
+        
+        // Take the top 10 players (or fewer if there are less than 10)
+        topUsers.value = processedData.slice(0, 10); 
+        
+        console.log("Top Users:", topUsers.value);  // Debugging line to check top players
+        
     } catch (error) {
         console.error("Error fetching leaderboard:", error);
     }
@@ -26,9 +59,9 @@ onMounted(fetchLeaderboard);
   <div class="leaderboard">
     <h2>🏆 Top 10 Players</h2>
     <ul>
-      <li v-for="(user, index) in topUsers" :key="user.id">
-        <span>#{{ index + 1 }} - {{ user.username }}</span>
-        <span>Speed: {{ user.speed }} WPM | Accuracy: {{ user.accuracy }}%</span>
+      <li v-for="(user, index) in topUsers" :key="user.Name + '-' + user.Level">
+        <span>#{{ index + 1 }} - {{ user.Name }}</span>
+        <span>Speed: {{ user.WordPerMinute }} WPM | Accuracy: {{ user.Accuracy }}%</span>
       </li>
     </ul>
   </div>
