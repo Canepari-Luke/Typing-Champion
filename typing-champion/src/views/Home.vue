@@ -1,6 +1,6 @@
 <script setup>
 import Header from '@/components/Header.vue';
-import Play from '@/components/root/game/Play.vue';
+import Play from '@/components/root/Play.vue';
 import TopLB from '@/components/root/TopLB.vue';
 </script>
 
