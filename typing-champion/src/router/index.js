@@ -4,7 +4,7 @@ import Home from "@/views/Home.vue";
 import LoginSignup from "@/views/LoginSignup.vue";
 import Leaderboard from "@/views/Leaderboard.vue";
 import PlayerStats from "@/views/PlayerStats.vue";
-
+import Game from "@/views/Game.vue";
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),
@@ -28,6 +28,11 @@ const router = createRouter({
             path:'/playerstats',
             name: 'playerstats',
             component: PlayerStats,
+        }
+        {
+            path:'/game',
+            name: 'game',
+            component: Game,
         }
     ]
 });
