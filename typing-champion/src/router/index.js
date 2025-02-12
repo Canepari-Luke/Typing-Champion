@@ -28,7 +28,7 @@ const router = createRouter({
             path:'/playerstats',
             name: 'playerstats',
             component: PlayerStats,
-        }
+        },
         {
             path:'/game',
             name: 'game',
