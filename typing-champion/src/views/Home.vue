@@ -1,9 +1,6 @@
 <script setup>
 import Header from '@/components/Header.vue';
-<<<<<<< HEAD
-=======
 import Play from '@/components/root/game/Play.vue';
->>>>>>> 4e7f83917fc51b0dc17e92cc62a54444171ffbc2
 import TopLB from '@/components/root/TopLB.vue';
 </script>
 
