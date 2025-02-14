@@ -6,8 +6,6 @@
 
 {Describe your purpose for writing this software.}
 
-[Software Demo Video](http://youtube.link.goes.here)
-
 # Development Environment
 
 {Describe the tools that you used to develop the software}
