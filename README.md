@@ -6,10 +6,6 @@
 
 {Describe your purpose for writing this software.}
 
-{Provide a link to your YouTube demonstration. It should be a 4-5 minute demo of the software running and a walkthrough of the code. Focus should be on sharing what you learned about the language syntax.}
-
-[Software Demo Video](http://youtube.link.goes.here)
-
 # Development Environment
 
 {Describe the tools that you used to develop the software}
@@ -20,7 +16,7 @@
 
 {Make a list of websites that you found helpful in this project}
 
-- [Web Site Name](http://url.link.goes.here)
+- [Vue.js](https://vuejs.org/)
 - [Web Site Name](http://url.link.goes.here)
 
 # Future Work
