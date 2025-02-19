@@ -1,28 +1,29 @@
 # Overview
 
-{Important! Do not say in this section that this is college assignment. Talk about what you are trying to accomplish as a software engineer to further your learning.}
+The main goal of this site was to increase our knowledge and experience regarding web development. We wanted a way for users to be able to interact with each other and build a sense of online community.
 
-{Provide a description of the software that you wrote to demonstrate the JavaScript language.}
+We wanted to make the site something fun with a healthy competitive spirit. We also wanted the site to hold educational value. To accomplish this, we designed a typing game that collects player/user statistics and has a leaderboard. There is also a level progression system. This way, users will be able to track their own progress while also comparing their improvement to others.
 
-{Describe your purpose for writing this software.}
+The ultimate purpose of writing this software was to be a personal project for our team to build our teamwork and overall knowledge and skill in web development. Specifically, in JavaScript.
 
 # Development Environment
 
-{Describe the tools that you used to develop the software}
+Vue.js was used to help organize and link files/components for different elements of the site.
 
-{Describe the programming language that you used and any libraries.}
+We used MySQL for the backend.
+
+We used HTML and CSS for aspects of the front end. We also used JavaScript for the game logic.
+For the backend, we used Python.
 
 # Useful Websites
 
-{Make a list of websites that you found helpful in this project}
-
 - [Vue.js](https://vuejs.org/)
-- [Web Site Name](http://url.link.goes.here)
+- [W3Schools](https://www.w3schools.com/vue/)
 
 # Future Work
 
-{Make a list of things that you need to fix, improve, and add in the future.}
+- We need to finish the game logic and ensure that all the vue.js files are properly linked.
+- We need to ensure that the user data is properly recorded and sent to the back end.
+- We need to make sure that the front end can retrieve all user data from the back end.
 
-- Item 1
-- Item 2
-- Item 3
+
