@@ -18,7 +18,7 @@ For the backend, we used Python.
 # Useful Websites
 
 - [Vue.js](https://vuejs.org/)
-- [W3 schools](https://www.w3schools.com/vue/)
+- [W3Schools](https://www.w3schools.com/vue/)
 
 # Future Work
 
