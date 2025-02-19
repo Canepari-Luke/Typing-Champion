@@ -22,8 +22,8 @@ For the backend, we used Python.
 
 # Future Work
 
-- Item 1 We need to finish the game logic and ensure that all the vue.js files are properly linked.
-- Item 2 We need to ensure that the user data is properly recorded and sent to the back end.
-- Item 3 We need to make sure that the front end can retrieve all user data from the back end.
+- We need to finish the game logic and ensure that all the vue.js files are properly linked.
+- We need to ensure that the user data is properly recorded and sent to the back end.
+- We need to make sure that the front end can retrieve all user data from the back end.
 
 
